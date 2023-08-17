@@ -2,7 +2,9 @@ const express        = require('express');
 const route          = express.Router(); // Call router middleware
 const userController = require('../controller/userController') // Import the userController.JS
 
-route.get('/api/get_all_users', userController.get_all_users);
+route.get('/api/generate_token', userController.generate_token);
+
+route.get('/api/get_all_users', authorize, userController.get_all_users);
 
 route.get('/api/find_user', userController.find_user);
 

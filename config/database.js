@@ -20,3 +20,5 @@ localDB.getConnection((err)=> {
         console.log('Database connectioin is successfully established!');
     }
 })
+
+module.exports = { localDB };

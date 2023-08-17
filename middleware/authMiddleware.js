@@ -5,7 +5,7 @@ global.authorize = (req, res, next) => {
     const authHeader = req.headers.authorization;
 
     if(typeof authHeader !== 'undefined'){
-        jwt.verify(authHeader, process.env.ACCESS_TOKEN, (err, results) => {
+        jwt.verify(authHeader, process.env.ACCESS_TOKEN_SECRET, (err, results) => {
             if(err){
                 // console.log(err);
                 return res.json({ message: "Authorization has been expired!" });
